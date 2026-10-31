@@ -4,6 +4,14 @@ Exploring the darker side of coffee with statistics
 
 Лабораторная работа 1 по инфохимии: исследуем влажность зёрен, кислотность и полноту напитка
 
+<p align="center">
+  <img src="coffee.gif" width="180" alt="Чашка кофе с поднимающимся паром">
+</p>
+
+<p align="center">
+  Исследуем распределения, пока остывает кофе
+</p>
+
 ## Авторы
 
 - Петров Мирон - [Mironiks007](https://github.com/Mironiks007)
