@@ -14,11 +14,11 @@ Exploring the darker side of coffee with statistics
 
 ## Авторы
 
-- Петров Мирон - [Mironiks007](https://github.com/Mironiks007)
-- Каплунова Анна - [kaplunovaania](https://github.com/kaplunovaania)
-- Ильин Матвей - [wizrdj](https://github.com/wizrdj)
-- Племяшов Ярослав - [losos-1](https://github.com/losos-1)
-- ещё один коллега с дизайна😊
+- Петров Мирон - [Mironiks007](https://github.com/Mironiks007) - инфохим
+- Каплунова Анна - [kaplunovaania](https://github.com/kaplunovaania) - инфохим
+- Ильин Матвей - [wizrdj](https://github.com/wizrdj) - дизайн
+- Племяшов Ярослав - [losos-1](https://github.com/losos-1) - дизайн
+- Швалов Тихон - [stenkich](https://github.com/stenkich) - дизайн
 
 ## Открыть работу
 
