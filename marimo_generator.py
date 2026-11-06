@@ -1,3 +1,11 @@
+# /// script
+# [tool.marimo.display]
+# theme = "dark"
+# ///
+# ^ тёмная тема всего приложения marimo (оболочка: фон/текст/панель
+# ползунков), не только графиков — читается marimo при `export html-wasm`
+# из этого же файла (PEP 723).
+
 import marimo
 
 __generated_with = "0.25.2"
