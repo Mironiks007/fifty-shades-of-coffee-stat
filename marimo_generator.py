@@ -76,6 +76,12 @@ def _(mo):
 
 @app.cell
 def _(mo):
+    mo.md("[⌂ Главная](index.html) · [☕ Кофе](s1.html) · [🍽️ HoReCa](s2.html)")
+    return
+
+
+@app.cell
+def _(mo):
     variable = mo.ui.dropdown(
         {"Рейтинг": "rating", "Число отзывов": "reviews", "ln(число отзывов)": "log"},
         value="Рейтинг",
@@ -110,7 +116,7 @@ def _(mo, np, plt, POP_RATING, POP_REVIEWS, variable, n, replace, seed,
 
     _rng = np.random.default_rng(int(seed.value))
     _nn = int(n.value)
-    _sample = _rng.choice(_pop, size=_nn, replace=bool(replace.value))
+    _sample = _rng.choice(_pop, size=_nn, replace=bool(replace.value) or _nn > _pop.size)
 
     # --- ECDF ---
     def _ecdf(a):
