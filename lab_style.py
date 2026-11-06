@@ -7,19 +7,19 @@
 
 import matplotlib.pyplot as plt
 
-PALETTE = {  # базовая тёмная палитра «Тёмная обжарка»
-    "bg": "#1b1310",
-    "panel": "#241914",
-    "text": "#ece0d0",
-    "muted": "#b59a86",
-    "grid": "#3a2a22",
-    "axis": "#9a8574",
+PALETTE = {  # базовая тёмная палитра — нейтральная тёмная (не коричневая)
+    "bg": "#141418",
+    "panel": "#1e1e24",
+    "text": "#eceae6",
+    "muted": "#9a97a0",
+    "grid": "#30303a",
+    "axis": "#6d6b75",
 }
 
 ACCENTS = {  # два акцента — по датасету
     "coffee": "#c8884a",  # кофейная лаба — янтарный
-    "horeca": "#e8c84a",  # наш датасет — жёлтый Starter (тёплый золотой)
-    "second": "#7fae9b",  # вспомогательный бирюзовый (линии моделей)
+    "horeca": "#f2e14a",  # наш датасет — яркий жёлтый Starter
+    "second": "#5cb5a6",  # вспомогательный бирюзовый (линии моделей)
 }
 
 LABELS = {  # русские подписи с единицами для наших величин
@@ -39,6 +39,16 @@ def apply_dark_style(accent="horeca"):
     Возвращает dict с выбранными цветами (accent, second, muted и т.д.)
     для использования в коде построения графиков.
     """
+    try:
+        ip = get_ipython()  # noqa: F821
+        ip.run_line_magic("config", "InlineBackend.figure_format = 'retina'")
+        ip.run_line_magic(
+            "config",
+            "InlineBackend.print_figure_kwargs = {'facecolor': '#141418', 'bbox_inches': 'tight'}",
+        )
+    except Exception:
+        pass
+
     accent_color = ACCENTS.get(accent, ACCENTS["horeca"])
     cycle_colors = [accent_color, ACCENTS["second"], PALETTE["muted"]]
 
@@ -46,17 +56,24 @@ def apply_dark_style(accent="horeca"):
         {
             "font.family": "serif",
             "font.serif": ["DejaVu Serif"],
+            "font.size": 13,
             "figure.facecolor": PALETTE["bg"],
-            "axes.facecolor": PALETTE["panel"],
+            "figure.dpi": 120,
+            "axes.facecolor": PALETTE["bg"],
             "savefig.facecolor": PALETTE["bg"],
             "text.color": PALETTE["text"],
-            "axes.labelcolor": PALETTE["text"],
+            "axes.labelcolor": PALETTE["muted"],
+            "axes.labelsize": 12,
             "axes.titlecolor": PALETTE["text"],
+            "axes.titleweight": "bold",
+            "axes.titlesize": 15,
+            "axes.linewidth": 0.8,
+            "axes.axisbelow": True,
             "xtick.color": PALETTE["muted"],
             "ytick.color": PALETTE["muted"],
             "axes.edgecolor": PALETTE["axis"],
             "grid.color": PALETTE["grid"],
-            "grid.alpha": 0.6,
+            "grid.alpha": 1,
             "axes.grid": True,
             "axes.prop_cycle": plt.cycler(color=cycle_colors),
             "legend.facecolor": PALETTE["panel"],
@@ -89,9 +106,13 @@ def styled_fig(nrows=1, ncols=1, **kw):
 
     fig.patch.set_facecolor(PALETTE["bg"])
     for ax in (axes.flat if hasattr(axes, "flat") else [axes]):
-        ax.set_facecolor(PALETTE["panel"])
+        ax.set_facecolor(PALETTE["bg"])
         for spine in ax.spines.values():
             spine.set_color(PALETTE["axis"])
+        ax.spines[["top", "right"]].set_visible(False)
+        ax.grid(axis="y", color=PALETTE["grid"], lw=0.7)
+        ax.grid(axis="x", visible=False)
+        ax.tick_params(length=0)
 
     fig.tight_layout()
     return fig, axes
