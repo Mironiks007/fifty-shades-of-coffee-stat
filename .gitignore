@@ -218,3 +218,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# s2 (наша часть): локальный датасет, venv
+TA_restaurants_curated.csv
+.venv-s2/

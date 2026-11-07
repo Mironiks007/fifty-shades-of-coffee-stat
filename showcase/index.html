@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fifty Shades of Coffee — статистика</title>
+<style>
+:root{--bg:#141418;--panel:#1e1e24;--text:#eceae6;--muted:#9a97a0;--grid:#30303a;--accent:#f2e14a;--second:#5cb5a6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:
+  radial-gradient(1100px 500px at 50% -10%, rgba(242,225,74,.07), transparent 60%),
+  var(--bg);
+  color:var(--text);font-family:Georgia,'Times New Roman',serif;line-height:1.6;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 22px}
+.tag{display:inline-block;background:var(--accent);color:var(--bg);font-family:ui-sans-serif,system-ui,sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:.3px;padding:4px 13px;border-radius:30px}
+h1{font-size:clamp(28px,5vw,42px);margin:16px 0 6px;text-align:center;font-weight:400}
+h1 b{color:var(--accent);font-weight:400}
+.sub{color:var(--muted);text-align:center;max-width:620px;margin:0 0 40px;font-size:16px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;width:100%;max-width:1000px}
+.card{background:var(--panel);border:1px solid var(--grid);border-radius:16px;padding:26px 22px;
+  display:flex;flex-direction:column;text-decoration:none;color:inherit;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 14px 40px rgba(0,0,0,.45)}
+.ic{font-size:30px;margin-bottom:12px}
+.card h2{font-size:20px;margin:0 0 6px}
+.card p{color:var(--muted);font-size:14px;margin:0 0 20px;flex:1}
+.go{align-self:flex-start;background:var(--accent);color:var(--bg);font-family:ui-sans-serif,system-ui,sans-serif;
+  font-size:13px;font-weight:700;padding:8px 16px;border-radius:24px;transition:filter .15s}
+.card:hover .go{filter:brightness(1.07)}
+.card.soon{opacity:.72}
+.card.soon .go{background:var(--grid);color:var(--muted)}
+footer{color:var(--muted);font-size:13px;margin-top:40px;text-align:center;font-family:ui-sans-serif,system-ui,sans-serif}
+footer a{color:var(--second);text-decoration:none}
+</style></head>
+<body>
+  <span class="tag">ПрикСтат · лабораторная 01</span>
+  <h1>Fifty Shades of <b>Coffee</b></h1>
+  <p class="sub">Исследование случайных величин. Два датасета — кофе и рестораны — в едином тёмном стиле «Тёмная обжарка». Общая работа команды.</p>
+  <div class="cards">
+    <a class="card" href="s1.html">
+      <div class="ic">☕</div>
+      <h2>Основной блокнот</h2>
+      <p>Кофе: влажность, кислотность, полнота. Три случайные величины, EDA, распределения, гипотезы.</p>
+      <span class="go">Открыть блокнот →</span>
+    </a>
+    <a class="card" href="s2.html">
+      <div class="ic">🍽️</div>
+      <h2>Доп. датасет — HoReCa</h2>
+      <p>TripAdvisor: рейтинг и число отзывов 108 тысяч ресторанов. Доказательство случайности, проверка независимости, логнормаль.</p>
+      <span class="go">Открыть блокнот →</span>
+    </a>
+    <a class="card" href="generator.html">
+      <div class="ic">🎛️</div>
+      <h2>Интерактивный генератор</h2>
+      <p>Ползунки: величина, размер выборки, способ отбора. Выборка против генеральной совокупности — вживую, в браузере.</p>
+      <span class="go">Запустить →</span>
+    </a>
+  </div>
+  <footer>Лабораторная 1 · общая работа команды · тёмный стиль «Тёмная обжарка» · <a href="https://github.com/Mironiks007/fifty-shades-of-coffee-stat" target="_blank" rel="noopener">репозиторий</a></footer>
+</body></html>
