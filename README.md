@@ -70,6 +70,10 @@ Exploring the darker side of coffee with statistics
 - `requirements-lab.txt` - зависимости для блокнотов, `requirements-autotests.txt` - для автотестов
 - `CONTRIBUTING.md` - порядок совместной работы
 
+## Сайт с лабой
+
+Спринты 1 и 2 с графиками и интерактивный генератор выборок можно посмотреть в браузере без установки: [coffee.stenkich.com](https://coffee.stenkich.com/)
+
 ## Локальный запуск
 
 Нужен Python 3.12 (версии пакетов закреплены в `requirements-lab.txt`)
@@ -131,5 +135,6 @@ python -m unittest discover -s tests -v
 - [Указатель всех файлов лабы](LAB01-START.md)
 - [Автотесты](AUTOTESTS.md)
 - [Структура репозитория](#структура-репозитория)
+- [Сайт с лабой](https://coffee.stenkich.com/)
 - [Локальный запуск](#локальный-запуск)
 - [Ограничения анализа](#ограничения-анализа)
