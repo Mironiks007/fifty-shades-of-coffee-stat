@@ -59,14 +59,24 @@ Exploring the darker side of coffee with statistics
 
 ## Структура репозитория
 
+Полный указатель файлов S1 и S2 - [LAB01-START.md](LAB01-START.md)
+
 - `coffee_ratings.csv` - исходные данные
-- `stat-lab1-s1.ipynb` - вычисления, графики и выводы
-- `requirements.txt` - зависимости
+- `coffee-cqi-2023.csv` - дополнительная выгрузка CQI 2023 для S2
+- `stat-lab1-s1.ipynb` - спринт 1: вычисления, графики и выводы
+- `stat-lab1-s2.ipynb` - спринт 2: генератор влажности и итоговые метрики ([сводка](S2-RESULTS.md))
+- `stat-lab1-s2-bonus-alias.ipynb`, `stat-lab1-s2-extra-dataset.ipynb`, `stat-lab1-s2-algorithms.ipynb` - допзадания S2
+- `tests/test_generators.py` - автотесты генераторов ([инструкция](AUTOTESTS.md))
+- `requirements-lab.txt` - зависимости для блокнотов, `requirements-autotests.txt` - для автотестов
 - `CONTRIBUTING.md` - порядок совместной работы
+
+## Сайт с лабой
+
+Спринты 1 и 2 с графиками и интерактивный генератор выборок можно посмотреть в браузере без установки: [coffee.stenkich.com](https://coffee.stenkich.com/)
 
 ## Локальный запуск
 
-Нужен Python 3.10 или новее
+Нужен Python 3.12 (версии пакетов закреплены в `requirements-lab.txt`)
 
 Из корня репозитория создаём виртуальное окружение:
 
@@ -89,11 +99,19 @@ source .venv/bin/activate
 Устанавливаем зависимости и запускаем JupyterLab:
 
 ```bash
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-lab.txt
 python -m jupyterlab
 ```
 
-Открываем `stat-lab1-s1.ipynb` и выполняем все ячейки сверху вниз
+Открываем блокноты по порядку: `stat-lab1-s1.ipynb`, `stat-lab1-s2.ipynb`, затем допзадания. В каждом выполняем все ячейки сверху вниз. Оба CSV лежат рядом с блокнотами
+
+Автотесты генераторов:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+Те же тесты запускаются в GitHub Actions на каждый push (вкладка **Actions**, проверка **Generator tests**)
 
 В Google Colab блокнот загружает CSV из публичного репозитория, если локального файла нет
 
@@ -113,6 +131,10 @@ python -m jupyterlab
 - [Данные и источники](#данные)
 - [Спринт 1: итоговый блокнот](stat-lab1-s1.ipynb)
 - [Открыть спринт 1 в Google Colab](https://colab.research.google.com/github/Mironiks007/fifty-shades-of-coffee-stat/blob/main/stat-lab1-s1.ipynb)
+- [Спринт 2: основной блокнот](stat-lab1-s2.ipynb) · [итоговые метрики](S2-RESULTS.md)
+- [Указатель всех файлов лабы](LAB01-START.md)
+- [Автотесты](AUTOTESTS.md)
 - [Структура репозитория](#структура-репозитория)
+- [Сайт с лабой](https://coffee.stenkich.com/)
 - [Локальный запуск](#локальный-запуск)
 - [Ограничения анализа](#ограничения-анализа)
